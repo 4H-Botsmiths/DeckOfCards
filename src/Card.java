@@ -1,13 +1,13 @@
 public class Card {
-    private Rank _rank;
-    private Suit _suit;
+    private Rank rank;
+    private Suit suit;
 
     public Card(Rank rank, Suit suit) {
         super();
-         _rank = rank;
-         _suit = suit;
+        this.rank = rank;
+        this.suit = suit;
     }
     public String toString() {
-        return this._rank + " of " + this._suit;
+        return this.rank + " of " + this.suit;
     }
 }
