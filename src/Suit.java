@@ -6,7 +6,7 @@ public enum Suit {
 
     private final String value;
 
-   Suit(String value) {
+    Suit(String value) {
         this.value = value;
     }
 

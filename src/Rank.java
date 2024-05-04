@@ -13,7 +13,6 @@ public enum Rank {
     QUEEN("Queen"),
     KING("King");
 
-
     private final String value;
 
     Rank(String value) {
