@@ -7,14 +7,7 @@ public class Deck {
     public Deck() {
         super();
         BuildDeck();
-    }
-
-    public boolean IsEmpty() {
-        return _cards.size() == 0;
-    }
-
-    public int RemainingCardCount() {
-        return _cards.size();
+        Shuffle();
     }
 
     private void BuildDeck() {
@@ -27,6 +20,14 @@ public class Deck {
 
     public void Shuffle() {
         Collections.shuffle(_cards);
+    }
+
+    public boolean IsEmpty() {
+        return _cards.size() == 0;
+    }
+
+    public int RemainingCardCount() {
+        return _cards.size();
     }
 
     public Card TakeCard() {
