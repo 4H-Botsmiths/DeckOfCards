@@ -8,6 +8,6 @@ public class Card {
          _suit = suit;
     }
     public String toString() {
-        return this._rank + " of " + this._suit;
+        return this._suit + "-" + this._rank;
     }
 }
