@@ -19,7 +19,7 @@ public class Hand {
     return cards.isEmpty();
   }
 
-  public int remainingCards() {
+  public int remainngCards() {
     return cards.size();
   }
 }
