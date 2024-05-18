@@ -25,7 +25,7 @@ public class Deck {
         return this.cards.size() == 0;
     }
 
-    public int ReminingCardCount(){
+    public int RemainingCardCount(){
         return this.cards.size();
     }
 
