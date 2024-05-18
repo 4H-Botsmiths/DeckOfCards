@@ -59,7 +59,7 @@ public class App {
                 pile.addCard(hand1.takeCard());
                 pile.addCard(hand1.takeCard());
             } catch (Exception e) {
-                System.err.println("Hand Empty!!!");
+                System.err.println("Hand 1 Empty!!!");
                 while (!pile.isEmpty()) {
                     hand2.addCard(pile.takeCard());
                 }
@@ -70,7 +70,7 @@ public class App {
                 pile.addCard(hand2.takeCard());
                 pile.addCard(hand2.takeCard());
             } catch (Exception e) {
-                System.err.println("Hand Empty!!!");
+                System.err.println("Hand 2 Empty!!!");
                 while (!pile.isEmpty()) {
                     hand1.addCard(pile.takeCard());
                 }
