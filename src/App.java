@@ -18,7 +18,7 @@ public class App {
         
         var round = 1;
         var escrowHand = new Hand();
-        var tieBreakerCardCount = 999999;
+        var tieBreakerCardCount = 3;
         while (hand1.RemainingCardCount() > tieBreakerCardCount + 1 && hand2.RemainingCardCount() > tieBreakerCardCount + 1) {
             System.out.println("round: " + round++);
             System.out.println("hand 1 cards remaining: " + hand1.RemainingCardCount());
