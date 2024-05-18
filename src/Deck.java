@@ -2,7 +2,7 @@ import java.util.Collections;
 import java.util.Stack;
 
 public class Deck {
-    private Stack<Card> _cards = new Stack<Card>();
+    private Stack<Card> cards = new Stack<Card>();
 
     public Deck() {
         super();
@@ -13,24 +13,24 @@ public class Deck {
     private void BuildDeck() {
         for(Suit suit : Suit.values()) {
             for(Rank rank : Rank.values()) {
-                _cards.push(new Card(rank, suit));
+                this.cards.push(new Card(rank, suit));
             }
         }
     }
 
     public void Shuffle() {
-        Collections.shuffle(_cards);
+        Collections.shuffle(cards);
     }
 
     public boolean IsEmpty() {
-        return _cards.size() == 0;
+        return this.cards.size() == 0;
     }
 
     public int RemainingCardCount() {
-        return _cards.size();
+        return this.cards.size();
     }
 
     public Card TakeCard() {
-        return _cards.pop();
+        return this.cards.pop();
     }
 }
