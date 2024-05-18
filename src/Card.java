@@ -1,6 +1,13 @@
 public class Card {
-    private Rank rank;
-    private Suit suit;
+    private final Rank rank;
+    public Rank getRank() {
+        return this.rank;
+    }
+
+    private final Suit suit;
+    public Suit getSuit() {
+        return this.suit;
+    }
 
     public Card(Rank rank, Suit suit) {
         super();
