@@ -1,7 +1,7 @@
 import java.util.Stack;
 
 public class Hand {
-  private Stack<Card> cards;
+  private Stack<Card> cards = new Stack<Card>();
 
   public void addCard(Card card) {
     cards.push(card);
