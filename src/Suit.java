@@ -1,12 +1,12 @@
 public enum Suit {
-    HEARTS("♥"),
-    SPADES("♠"),
-    DIAMONDS("♦"),
-    CLUBS("♣");
+    HEARTS("Hearts"),
+    SPADES("Spades"),
+    DIAMONDS("Diamonds"),
+    CLUBS("Clubs");
 
     private final String value;
 
-   Suit(String value) {
+    Suit(String value) {
         this.value = value;
     }
 
