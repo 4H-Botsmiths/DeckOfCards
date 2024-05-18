@@ -4,11 +4,7 @@ public class Hand {
   private Stack<Card> cards = new Stack<Card>();
 
   public void addCard(Card card) {
-    cards.push(card);
-  }
-
-  public void addCards(Stack<Card> cards) {
-    this.cards.addAll(cards);
+    cards.insertElementAt(card, 0);
   }
 
   public Card takeCard() {
