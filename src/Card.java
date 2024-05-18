@@ -4,10 +4,15 @@ public class Card {
 
     public Card(Rank rank, Suit suit) {
         super();
-         _rank = rank;
-         _suit = suit;
+        _rank = rank;
+        _suit = suit;
     }
+
     public String toString() {
         return this._rank + " of " + this._suit;
+    }
+
+    public Rank getRank() {
+        return _rank;
     }
 }
