@@ -19,3 +19,21 @@ jobs:
       with:
         distribution: 'adopt'
         java-version: '22'
+    - name: Cache Gradle packages
+      uses: actions/cache@v2
+      with:
+        path: ~/.gradle/caches
+        key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
+        restore-keys: ${{ runner.os }}-gradle
+  
+    - name: Build with Gradle
+      run: ./gradlew build
+
+    - name: Package as executable JAR
+      run: ./gradlew jar
+
+    - name: Upload JAR file
+      uses: actions/upload-artifact@v2
+      with:
+        name: war.jar
+        path: build/libs/war.jar
