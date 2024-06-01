@@ -31,8 +31,20 @@ public class App {
     }
 
     private static void compete(Hand hand1, Hand hand2, Hand pile) {
-        if (hand1.isEmpty() || hand2.isEmpty())
+        if (hand1.isEmpty() || hand2.isEmpty()) {
+            if (hand1.isEmpty()) {
+                System.out.println("Hand 2 wins");
+                while (!pile.isEmpty()) {
+                    hand2.addCard(pile.takeCard());
+                }
+            } else {
+                System.out.println("Hand 1 wins");
+                while (!pile.isEmpty()) {
+                    hand1.addCard(pile.takeCard());
+                }
+            }
             return;
+        }
         Card card1 = hand1.takeCard();
         Card card2 = hand2.takeCard();
         if (card1.getRank().ordinal() > card2.getRank().ordinal()) {
@@ -54,27 +66,15 @@ public class App {
             pile.addCard(card1);
             pile.addCard(card2);
 
-            try {
-                pile.addCard(hand1.takeCard());
-                pile.addCard(hand1.takeCard());
-                pile.addCard(hand1.takeCard());
-            } catch (Exception e) {
-                System.err.println("Hand 1 Empty!!!");
-                while (!pile.isEmpty()) {
-                    hand2.addCard(pile.takeCard());
+            for (int i = 0; i < 3; i++) {
+                if (!hand1.isEmpty()) {
+                    pile.addCard(hand1.takeCard());
                 }
-                return;
             }
-            try {
-                pile.addCard(hand2.takeCard());
-                pile.addCard(hand2.takeCard());
-                pile.addCard(hand2.takeCard());
-            } catch (Exception e) {
-                System.err.println("Hand 2 Empty!!!");
-                while (!pile.isEmpty()) {
-                    hand1.addCard(pile.takeCard());
+            for (int i = 0; i < 3; i++) {
+                if (!hand2.isEmpty()) {
+                    pile.addCard(hand2.takeCard());
                 }
-                return;
             }
             compete(hand1, hand2, pile);
         }
