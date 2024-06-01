@@ -1,18 +1,8 @@
 name: Java CI with Gradle
 
 on:
-  push:
-    paths: 
-      - 'src/**'
-      - 'build.gradle'
-      - 'gradlew'
-      - 'gradlew.bat'
   pull_request:
-    paths-ignore: 
-      - 'src/**'
-      - 'build.gradle'
-      - 'gradlew'
-      - 'gradlew.bat'
+
 jobs:
   build:
     strategy:
