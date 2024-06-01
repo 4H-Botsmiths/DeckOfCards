@@ -2,14 +2,24 @@ name: Java CI with Gradle
 
 on:
   push:
+    paths: 
+      - 'src/**'
+      - 'build.gradle'
+      - 'gradlew'
+      - 'gradlew.bat'
   pull_request:
-    branches: [ main ]
-
+    paths-ignore: 
+      - 'src/**'
+      - 'build.gradle'
+      - 'gradlew'
+      - 'gradlew.bat'
 jobs:
   build:
-
-    runs-on: ubuntu-latest
-
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+        
+    runs-on: ${{ matrix.os }}
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
@@ -28,10 +38,20 @@ jobs:
         restore-keys: ${{ runner.os }}-gradle
     
     - name: Build with Gradle
+      if: runner.os != 'Windows'
       run: ./gradlew build
 
     - name: Package as executable JAR
+      if: runner.os != 'Windows'
       run: ./gradlew jar
+
+    - name: Build with Gradle (Windows)
+      if: runner.os == 'Windows'
+      run: ./gradlew.bat build
+
+    - name: Package as executable JAR (Windows)
+      if: runner.os == 'Windows'
+      run: ./gradlew.bat jar
 
     - name: Upload JAR file
       uses: actions/upload-artifact@v2
