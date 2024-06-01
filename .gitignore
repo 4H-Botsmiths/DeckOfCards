@@ -1,2 +1,6 @@
 bin
+
+# Gradle Files
 .gradle
+build
+gradle
